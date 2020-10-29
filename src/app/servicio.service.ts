@@ -14,16 +14,33 @@ export class ServicioService {
     "Content-Type": "application/x-www-form-urlencoded"
   });
 
-  private url: string = "http://ec2-18-219-168-178.us-east-2.compute.amazonaws.com/api/api/microRelatos/generarMicroRelato";
+  private url: string = "https://backendspectra.herokuapp.com/api/user/saveUser";
 
   registrarUsuario(data: any): Observable<any> { 
-    const body = new HttpParams().set(`data`, JSON.stringify(data));    
-      
-        return this.http.post<any>(this.url, body.toString(), {
-          headers: this.httpHeaders 
-        });
+    console.log("entró");
+    let body = new FormData();
+  
+
+    body.append('type', "student");
+    body.append("email", data.correo);
+    body.append("name", data.nombre);
+    body.append("lastName", data.apellido);
+    body.append("gender", data.sexo);
+    body.append("company", "Origin");
+    body.append("password", data.contrasena);
+    body.append("city", data.ciudad);
+    body.append("nickname", data.nickname);
+    body.append("simulatorsLength", "1");
+    body.append('simulators', "Origin")  
+
+    return this.http.post<any>(this.url,body);
+  }
+    
+  
+  
+   
       
     
   }
 
-}
+

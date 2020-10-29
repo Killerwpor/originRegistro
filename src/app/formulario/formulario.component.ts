@@ -39,12 +39,12 @@ export class FormularioComponent implements OnInit {
     };
     
     this.servicio.registrarUsuario(data).subscribe(result => {
-    
+    alert("Se ha registrado con éxito!")
      });
   }
 
   onItemChange(event){
-    console.log(event.target.value);
+    this.sexo=event.target.value;
   }
 
 
