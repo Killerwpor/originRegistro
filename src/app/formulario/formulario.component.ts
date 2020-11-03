@@ -19,14 +19,25 @@ export class FormularioComponent implements OnInit {
   nickname: String;
   contrasena: String;
   contrasena2: String;
-  
+  terminos:boolean=false;
 
   constructor(public servicio: ServicioService) { }
 
   ngOnInit(): void {
   }
 
+  validarCampos(){
+    return true;
+  }
+
   registrarse(){
+    var validacion=this.validarCampos();
+    if(this.terminos){
+
+      if(validacion){
+
+     
+    
     var data={
       nombre: this.nombre,
       apellido: this.apellido,
@@ -41,10 +52,22 @@ export class FormularioComponent implements OnInit {
     this.servicio.registrarUsuario(data).subscribe(result => {
     alert("Se ha registrado con éxito!")
      });
+    }
+  }
+    else{
+      alert("Debe aceptar los terminos para poder registrarse.")
+    }
   }
 
   onItemChange(event){
     this.sexo=event.target.value;
+  }
+
+  aceptarTerminos(event){
+    if(event.target.value=="acepto"){
+      this.terminos=true;
+
+    }
   }
 
 

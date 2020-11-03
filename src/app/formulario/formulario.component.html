@@ -5,7 +5,7 @@
     
     <div class="contenedorForm">
       <fieldset>
-        <legend><span class="number">1</span><div class="subtitulo">Información basica</div></legend>
+        <legend><span class="number">1</span><div class="subtitulo">Información básica</div></legend>
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="user_name" [(ngModel)]="nombre">
     
@@ -28,10 +28,10 @@
       <fieldset>
         <legend><span class="number">2</span><div class="subtitulo">Tus datos de ingreso</div></legend>
     
-        <label for="mail">Correo electronico:</label>
+        <label for="mail">Correo electrónico:</label>
         <input type="email" id="mail" name="user_email" [(ngModel)]="correo">
     
-        <label for="mail">Nickname:</label>
+        <label for="mail">Nombre de usuario:</label>
         <input type="email" id="mail" name="user_email" [(ngModel)]="nickname">
     
         <label for="password">Contraseña:</label>
@@ -41,6 +41,9 @@
         <input type="password" id="password" name="user_password" [(ngModel)]="contrasena2">
         
       </fieldset>
+      <div>
+        <input type="radio" id="under_13" value="acepto" (change)="aceptarTerminos($event)"><label for="under_13" class="light" >He leído y acepto los <a routerLink="/terminos" routerLinkActive="active">términos y condiciones de uso</a></label><br><br>
+      </div>
       <button class="botonRegistrarse" type="submit" (click)="registrarse()" >Registrarse</button>
     </div>
 
