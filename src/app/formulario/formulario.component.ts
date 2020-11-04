@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {ServicioService} from '../servicio.service'
+import {Router} from '@angular/router';
 
 
 
@@ -11,28 +12,72 @@ import {ServicioService} from '../servicio.service'
 })
 export class FormularioComponent implements OnInit {
 
-  nombre: String;
-  apellido: String;
-  ciudad: String;
-  correo: String;
-  sexo: String;
-  nickname: String;
-  contrasena: String;
-  contrasena2: String;
+  nombre: String="";
+  apellido: String="";
+  ciudad: String="";
+  correo: String="";
+  sexo: String="";
+  nickname: String="";
+  contrasena: String="";
+  contrasena2: String="";
   terminos:boolean=false;
 
-  constructor(public servicio: ServicioService) { }
+  constructor(public servicio: ServicioService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   validarCampos(){
-    return true;
+
+    var validacion=true;
+  
+    if(this.nombre==""){
+      validacion=false;
+    }
+    if(this.apellido==""){
+      validacion=false;
+    }
+    if(this.ciudad==""){
+      validacion=false;
+    }
+    if(this.correo==""){
+      validacion=false;
+    }
+    if(this.sexo==""){
+      validacion=false;
+    }
+
+    if(this.nickname==""){
+      validacion=false;
+    }
+
+    if(this.contrasena==""){
+      validacion=false;
+    }
+    if(this.contrasena2==""){
+      validacion=false;
+    }   
+
+    
+    return validacion;
+  }
+
+  validarContraseña(){
+    var respuesta=true;
+    if(this.contrasena!=this.contrasena2){
+      respuesta=false;
+    }
+    return respuesta;
   }
 
   registrarse(){
     var validacion=this.validarCampos();
+    var validacionContraseña=this.validarContraseña();
+    console.log(validacion);
     if(this.terminos){
+      if(validacionContraseña){
+        
+     
 
       if(validacion){
 
@@ -51,9 +96,17 @@ export class FormularioComponent implements OnInit {
     
     this.servicio.registrarUsuario(data).subscribe(result => {
     alert("Se ha registrado con éxito!")
+    this.router.navigateByUrl('/descarga');
      });
     }
+    else{
+      alert("Error, debe llenar todos los campos.")
+    }
   }
+  else{
+    alert("Error, las contraseñas no coinciden");
+  }
+}
     else{
       alert("Debe aceptar los terminos para poder registrarse.")
     }

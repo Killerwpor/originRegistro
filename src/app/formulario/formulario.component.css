@@ -3,7 +3,7 @@
   }
   
   a {
-    color: blue;
+    color: white;
   }
 
   label{
@@ -152,6 +152,8 @@
       font-size: 30px;
       display: inline;
     }
+
+
     
     @media screen and (min-width: 480px) {
     
@@ -235,5 +237,32 @@
       border-radius: 3px;
       -webkit-transition: all .2s;
       transition: all .2s;
+      }
+
+
+      @media screen and (max-width: 480px) {
+    
+        .logoArbol{
+            width: 200px;
+            height: 200px;
+        }
+
+        .logoEmocionante{
+            width: 400px;
+        }
+
+        .contenedorForm{
+          position: relative;
+          top: 100px;
+          background-color: #622c69;
+          border-radius: 20px;
+          padding: 50px 0px 0px 0px;
+          margin: 0px 0px;
+        }
+
+        .botonRegistrarse{
+          width: 300px;
+        }
+      
       }
       

@@ -1,0 +1,52 @@
+.contenedor{
+    text-align: center;
+}
+
+.contenedorDescarga{
+    position: relative;
+    top: 50px;
+    text-align: center;
+}
+
+.botonDescarga{
+    margin: 20px 20px;
+    width: 10%;
+}
+
+.botonDescarga:hover{
+    cursor: pointer;
+}
+
+.titulo{
+    font-size: 35px;
+    color: #E70779;
+}
+
+@media screen and (max-width: 480px) {
+
+    .contenedor{
+        position: relative;
+        top: 100px !important;
+        text-align: center;
+    }
+    
+    .logoDescarga{
+        width: 100%;
+    }
+
+    .logoEmocionante{
+        width: 100%;
+    }
+
+    .titulo{
+        font-size: 25px;
+    }
+
+    .botonDescarga{
+        position: relative;
+        top: 100px;
+        margin: 20px 20px;
+        width: 20%;
+    }
+  
+  }
