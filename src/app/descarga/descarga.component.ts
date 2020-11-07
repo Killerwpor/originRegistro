@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-descarga',
   templateUrl: './descarga.component.html',
@@ -11,5 +12,6 @@ export class DescargaComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 }

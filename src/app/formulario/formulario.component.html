@@ -34,8 +34,8 @@
         <label for="mail">Nombre de usuario:</label>
         <input type="email" id="mail" name="user_email" [(ngModel)]="nickname">
     
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="user_password" [(ngModel)]="contrasena">
+        <label for="password">Contraseña: <div style="color: red">{{mensajeContrasenaInsegura}}</div></label>
+        <input type="password" id="password" name="user_password" [(ngModel)]="contrasena" (keypress)="keyPress($event)">
     
         <label for="password">Repetir contraseña:</label>
         <input type="password" id="password" name="user_password" [(ngModel)]="contrasena2">

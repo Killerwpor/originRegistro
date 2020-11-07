@@ -21,6 +21,8 @@ export class FormularioComponent implements OnInit {
   contrasena: String="";
   contrasena2: String="";
   terminos:boolean=false;
+  contraseñaSegura:boolean=false;
+  mensajeContrasenaInsegura: String=""
 
   constructor(public servicio: ServicioService, private router: Router) { }
 
@@ -70,10 +72,58 @@ export class FormularioComponent implements OnInit {
     return respuesta;
   }
 
+  scorePassword(pass) {
+    var score: number= 0;
+    if (!pass)
+        return score;
+
+    // award every unique letter until 5 repetitions
+    var letters = new Object();
+    for (var i=0; i<pass.length; i++) {
+        letters[pass[i]] = (letters[pass[i]] || 0) + 1;
+        score += 5.0 / letters[pass[i]];
+    }
+
+    // bonus points for mixing it up
+    var variations = {
+        digits: /\d/.test(pass),
+        lower: /[a-z]/.test(pass),
+        upper: /[A-Z]/.test(pass),
+        nonWords: /\W/.test(pass),
+    }
+
+    var variationCount = 0;
+    for (var check in variations) {
+        variationCount += (variations[check] == true) ? 1 : 0;
+    }
+    score += (variationCount - 1) * 10;
+
+    return score;
+}
+
+ checkPassStrength(pass) {
+    var score = this.scorePassword(pass);
+return score;
+}
+
+keyPress(event: KeyboardEvent) {
+  console.log("entró");
+  var seguridadContraseña=this.checkPassStrength(this.contrasena);
+  if(seguridadContraseña>60){
+    this.contraseñaSegura=true;
+    this.mensajeContrasenaInsegura="";
+  }
+  else{
+   this.mensajeContrasenaInsegura=" Contraseña demasiado debil";
+  }
+}
+
   registrarse(){
     var validacion=this.validarCampos();
     var validacionContraseña=this.validarContraseña();
-    console.log(validacion);
+   if(this.contraseñaSegura){
+     
+   
     if(this.terminos){
       if(validacionContraseña){
         
@@ -95,6 +145,15 @@ export class FormularioComponent implements OnInit {
     };
     
     this.servicio.registrarUsuario(data).subscribe(result => {
+      var dataAux={
+        email: this.correo,
+        emailRegistro: this.correo,
+        contrasenaRegistro: this.contrasena
+     
+      };
+      this.servicio.enviarEmail(dataAux).subscribe(result => {
+      
+         });
     alert("Se ha registrado con éxito!")
     this.router.navigateByUrl('/descarga');
      });
@@ -110,6 +169,10 @@ export class FormularioComponent implements OnInit {
     else{
       alert("Debe aceptar los terminos para poder registrarse.")
     }
+  }
+  else{
+    alert("Debe ingresar una contraseña más segura")
+  }
   }
 
   onItemChange(event){

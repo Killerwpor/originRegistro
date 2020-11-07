@@ -15,6 +15,7 @@ export class ServicioService {
   });
 
   private url: string = "https://backendspectra.herokuapp.com/api/user/saveUser";
+  private urlMail: string="https://backendspectra.herokuapp.com/api/user/sendMail"
 
   registrarUsuario(data: any): Observable<any> { 
     console.log("entró");
@@ -35,6 +36,18 @@ export class ServicioService {
 
     return this.http.post<any>(this.url,body);
   }
+
+  enviarEmail(data: any): Observable<any> { 
+    const body = new HttpParams().set(`data`, JSON.stringify(data));    
+      
+        return this.http.post<any>(this.urlMail, body.toString(), {
+          headers: this.httpHeaders 
+        });
+      
+    
+  }
+
+  
     
   
   
