@@ -1,15 +1,63 @@
+<div class="fondo">
 <div class="contenedor">
     <img class="logoDescarga" src="assets/img/UI_img_title.png">
     <p class="titulo">Vive una experiencia virtual asombrosa, llena de naturaleza y arte.</p>
+    <div class="contenedorDescarga">
+        <img src="assets/img/UI_btn_appstore.png" class="botonDescarga" *ngIf="appstore">
+        <img src="assets/img/UI_btn_playstore.png" class="botonDescarga" *ngIf="playstore">
+        <img src="assets/img/UI_btn_mac.png" class="botonDescarga" *ngIf="mac">               
+ 
+        <a href="https://origin-descarga.s3.amazonaws.com/El+Arbol+del+Magnolio+Installer.exe"> 
+            <img src="assets/img/UI_btn_windows.png" class="botonDescarga" *ngIf="windows"></a>
+     
+           
+        <img src="assets/img/UI_btn_mac_disabled.png" class="botonDescarga" *ngIf="!mac">
+       
+ 
+
+  
+        <img src="assets/img/UI_btn_appstore_disabled.png" class="botonDescarga" *ngIf="!appstore">
+
+     
+
+      
+        <img src="assets/img/UI_btn_playstore_disabled.png" class="botonDescarga" *ngIf="!playstore">
+     
+      
+      
+      
+     
+        <img src="assets/img/UI_btn_windows_disabled.png" class="botonDescarga" *ngIf="!windows">
+        
+
+    </div>
+    <div>
     <img class="logoEmocionante" src="assets/img/UI_img_screens.png">
+</div>
     </div>
 
-<div class="contenedorDescarga">
-        <!-- <img src="assets/img/UI_btn_appstore.png" class="botonDescarga">
-        <img src="assets/img/UI_btn_playstore.png" class="botonDescarga"> -->
-        <a href="https://origin-descarga.s3.amazonaws.com/text.exe"><img src="assets/img/UI_btn_windows.png" class="botonDescarga"></a>
+    
+    <div class="center">
+    
+
+        <p ><strong><span style="color: rgb(250, 207, 31);" class="textoRequisitos">Antes de descargar Origin considera:</span></strong><span class="textoRequisitos"><br></span></p>
+<ul>
+    <li ><span class="textoRequisitos">Aseg&uacute;rate de tener conexi&oacute;n a internet, preferiblemente por cable de red.</span></li>
+    <li ><span class="textoRequisitos">Para una mejor experiencia se recomienda usar un mouse de tres botones, tambi&eacute;n aud&iacute;fonos y micr&oacute;fono.</span></li>
+</ul>
+<p ><span class="textoRequisitos">Si vas a ingresar desde un port&aacute;til aseg&uacute;rate de tener el cargador conectado a la red el&eacute;ctrica.<span style="color: rgb(250, 207, 31);"><br></span></span></p>
+<p ><span class="textoRequisitos"><strong><span style="color: rgb(250, 207, 31);">Requerimientos t&eacute;cnicos:</span></strong></span></p>
+<ul>
+    <li ><span class="textoRequisitos">Windows 10 64-bits.</span></li>
+    <li ><span class="textoRequisitos">Procesador Quad-core Intel o AMD, 2.5 GHz o superior.</span></li>
+    <li ><span class="textoRequisitos">8 Gb de memoria RAM como m&iacute;nimo (Ideal 16).</span></li>
+    <li ><span class="textoRequisitos">Tarjeta de video compatible con DirectX 11 o DirectX 12.</span></li>
+    <li ><span class="textoRequisitos">Espacio en disco de 6 Gb libres.</span></li>
+    <li ><span class="textoRequisitos">Conexi&oacute;n de internet banda ancha m&iacute;nimo de 20 Mb.</span></li>
+</ul>
+<p ><span class="textoRequisitos text-center">Origin para El &Aacute;rbol del Magnolio es una experiencia virtual en continua evoluci&oacute;n, ay&uacute;danos a mejorar con tus ideas, escr&iacute;benos al correo origin@dreamhousestudios.co</span></p>
+    
+    
     </div>
-    
 
-
-    
+</div>

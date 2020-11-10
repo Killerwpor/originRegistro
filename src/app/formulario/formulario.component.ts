@@ -145,6 +145,10 @@ keyPress(event: KeyboardEvent) {
     };
     
     this.servicio.registrarUsuario(data).subscribe(result => {
+      if(result=="El usuario ya esta registrado en la BD"){
+        alert("El usuario con el email ingresado ya esta registrado en la BD");
+      }
+      else{      
       var dataAux={
         email: this.correo,
         emailRegistro: this.correo,
@@ -154,8 +158,9 @@ keyPress(event: KeyboardEvent) {
       this.servicio.enviarEmail(dataAux).subscribe(result => {
       
          });
-    alert("Se ha registrado con éxito!")
+    alert("Se ha registrado con éxito, revise su correo para más detalles.")
     this.router.navigateByUrl('/descarga');
+        }
      });
     }
     else{

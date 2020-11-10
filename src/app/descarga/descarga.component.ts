@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DescargaComponent implements OnInit {
 
+  appstore: boolean=false;
+  playstore: boolean=false;
+  mac: boolean=false;
+  windows: boolean=true;
+
   constructor() { }
 
   ngOnInit(): void {

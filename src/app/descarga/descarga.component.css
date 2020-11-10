@@ -1,14 +1,39 @@
+.fondo{
+    background:  url('../../assets/img/UI_img_bg_S.jpg'); 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}
+
+.textoPequeño{
+    display: inline;
+}
 .contenedor{
     text-align: center;
 }
 
-.contenedorDescarga{
+.textoPequeño{
     position: relative;
-    top: 50px;
+    bottom: 115px;
+    left: 20px;
+    display: block;
+    color: #722D7F;
+}
+
+.contenedorDescarga{
+    display: inline-block;
+    position: relative;
+    top: 10px;
     text-align: center;
 }
 
+
+
 .botonDescarga{
+    position: relative;
+    bottom: 80px;
     margin: 20px 20px;
     width: 10%;
 }
@@ -18,9 +43,23 @@
 }
 
 .titulo{
+    position: relative;
+    bottom: 40px;
     font-size: 35px;
     color: #E70779;
 }
+
+.logoEmocionante{
+    position: relative;
+    bottom: 60px;
+    width: 30%;
+}
+
+.contenedorRequisitos{
+    display:block;
+}
+
+
 
 @media screen and (max-width: 480px) {
 
@@ -31,22 +70,49 @@
     }
     
     .logoDescarga{
+        position: relative;
+        bottom: 80px;
         width: 100%;
     }
 
     .logoEmocionante{
-        width: 100%;
+        width: 60%;
     }
 
     .titulo{
-        font-size: 25px;
+        position: relative;
+        bottom: 80px;
+        font-size: 20px;
     }
 
     .botonDescarga{
         position: relative;
-        top: 100px;
-        margin: 20px 20px;
+        bottom: 50px;
+        margin: 20px 2px;
         width: 20%;
     }
+
+    .center {
+        position: relative;
+        top: 28px;
+        margin: auto;
+        width: 100% !important;
+        padding: 10px;
+       
+      }
+
+      .textoRequisitos{
+ 
+        font-size: 13px !important;
+    }
   
+  }
+
+  .textoRequisitos{
+      font-size: 22px;
+  }
+  .center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
   }
