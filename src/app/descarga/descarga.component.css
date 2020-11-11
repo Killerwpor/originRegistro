@@ -7,9 +7,7 @@
     
 }
 
-.textoPequeño{
-    display: inline;
-}
+
 .contenedor{
     text-align: center;
 }
@@ -17,7 +15,7 @@
 .textoPequeño{
     position: relative;
     bottom: 115px;
-    left: 20px;
+    left:100px;
     display: block;
     color: #722D7F;
 }
@@ -60,8 +58,16 @@
 }
 
 
-
 @media screen and (max-width: 480px) {
+
+    .contenedorDescarga{
+        display: inline-block;
+        position: relative;
+        top: -40px;
+        text-align: center;
+    }
+    
+    
 
     .contenedor{
         position: relative;
