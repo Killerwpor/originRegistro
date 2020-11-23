@@ -2,8 +2,10 @@
     <img class="logoArbol" src="https://www.elarboldelmagnolio.com/wp-content/uploads/2020/09/logo-arbol-magnolio-morado.png">
     <img class="logoEmocionante" src="https://www.elarboldelmagnolio.com/wp-content/uploads/2020/09/txt-esta-pasando-algo-emocionante.png">
     </div>
+
+    <div class="container-fluid text-center">
     
-    <div class="contenedorForm">
+    <div class="contenedorForm text-center">
       <fieldset>
         <legend><span class="number">1</span><div class="subtitulo">Información básica</div></legend>
         <label for="name">Nombre:</label>
@@ -31,7 +33,7 @@
         <label for="mail">Correo electrónico:</label>
         <input type="email" id="mail" name="user_email" [(ngModel)]="correo">
     
-        <label for="mail">Nombre de usuario: (Este es el nombre que tendrá tu avatar dentro de la experiencia El arbol del magnolio)</label>
+        <label for="mail">Nombre de usuario: (Este es el nombre que tendrá tu avatar dentro de la experiencia El Árbol del Magnolio)</label>
         <input type="email" id="mail" name="user_email" [(ngModel)]="nickname">
     
         <label for="password">Contraseña: <div style="color: red">{{mensajeContrasenaInsegura}}</div></label>
@@ -45,5 +47,6 @@
         <input type="radio" id="under_13" value="acepto" (change)="aceptarTerminos($event)"><label for="under_13" class="light" >He leído y acepto la <a href="http://www.origin.com.co/terminos" target="_blank">política de tratamiento y manejo de datos personales</a></label><br><br>
       </div>
       <button class="botonRegistrarse" type="submit" (click)="registrarse()" >Registrarse</button>
+      <p style="color: #facf1f; text-align: center;">¿Ya tienes una cuenta? <a href="descarga"> Haz clic aquí para descargar</a></p>
     </div>
-
+  </div>

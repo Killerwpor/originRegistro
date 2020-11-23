@@ -1,10 +1,17 @@
 .fondo{
-    background:  url('../../assets/img/UI_img_bg_S.jpg'); 
+    background:  url('../../assets/img/UI_img_bg_S.png'); 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     
+}
+
+.registrarse{
+    position: relative;
+    font-size: 30px;
+    bottom: 100px;
+    color: #3c4c27;
 }
 
 
@@ -59,6 +66,15 @@
 
 
 @media screen and (max-width: 480px) {
+
+    .textoPequeño{
+        position: relative;
+        bottom: 80px;
+        left:50px;
+        display: block;
+        font-size: 12px;
+        color: #722D7F;
+    }
 
     .contenedorDescarga{
         display: inline-block;

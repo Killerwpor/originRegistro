@@ -28,10 +28,15 @@
   }
   
   .contenedorForm{
+    position: relative;
+    top: 60px;
+    margin: auto;
+    border: 3px solid green;
+    padding: 10px;
     background-color: #622c69;
     border-radius: 20px;
     padding: 50px 50px 50px 50px;
-    margin: 100px 100px;
+    width: 50%;
   }
   
   
@@ -71,6 +76,7 @@
     input[type="url"],
     textarea,
     select {
+      
       background: rgba(255,255,255,0.1);
       border: none;
       font-size: 16px;
@@ -258,6 +264,9 @@
           border-radius: 20px;
           padding: 50px 0px 0px 0px;
           margin: 0px 0px;
+          width: 100%;
+          
+  
         }
 
         .botonRegistrarse{
