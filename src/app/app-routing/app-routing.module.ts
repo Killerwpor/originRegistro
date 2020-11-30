@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormularioComponent } from '../formulario/formulario.component'
 import { TerminosComponent } from '../terminos/terminos.component'
 import { DescargaComponent } from '../descarga/descarga.component'
+import { AdminPanelComponent } from '../admin-panel/admin-panel.component'
 
 const routes: Routes = [
     {
@@ -16,7 +17,12 @@ const routes: Routes = [
   {
     path: 'descarga',
     component: DescargaComponent,
+},
+{
+    path: 'admin',
+    component: AdminPanelComponent,
 }
+
 ];
 
 @NgModule({

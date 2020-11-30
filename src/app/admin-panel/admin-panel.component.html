@@ -1,0 +1,105 @@
+    <div class="container-fluid text-center">
+    
+    <div class="contenedorForm text-center" *ngIf="!isLogin">
+
+      
+      <fieldset>
+       <div class="subtitulo">Login</div>
+       <br> <br> 
+    
+       
+    
+        <label for="mail">Usuario</label>
+        <input type="email" id="mail" name="user_email" [(ngModel)]="nickname">
+    
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="user_password" [(ngModel)]="contrasena">
+    
+      
+      </fieldset>
+      <button class="botonRegistrarse button" type="submit" (click)="login()" >Entrar</button>
+      </div>
+
+<!--FIN LOGIN-->
+
+      <div class="contenedorForm text-center" *ngIf="isLogin">
+
+      
+        <fieldset>
+         <div class="subtitulo">Administra valores del servidor</div>
+         <br> <br> 
+      
+         
+      
+          <label for="mail">ConnectToGameLift</label>
+          <input type="email" id="mail" name="user_email" [(ngModel)]="connectToGameLift">
+      
+          <label for="password">AccessKeyID</label>
+          <input type="text" id="password" name="user_password" [(ngModel)]="accessKeyID">
+
+          <label for="mail">SecretKey</label>
+          <input type="text" id="mail" name="user_email" [(ngModel)]="secretKey">
+      
+          <label for="password">FleetID</label>
+          <input type="text" id="password" name="user_password" [(ngModel)]="fleetID">
+
+          <label for="mail">ServerIP</label>
+          <input type="text" id="mail" name="user_email" [(ngModel)]="serverIP">
+      
+          <label for="password">ServerPort</label>
+          <input type="text" id="password" name="user_password" [(ngModel)]="serverPort">
+
+         
+          
+          
+      
+        
+        </fieldset>
+        <button class="botonServerInfo button" type="submit" (click)="openModal('confirmation')" >Guardar</button>
+        </div>
+
+        
+        <!--MODAL PASSWORD-->       
+        <ng-template #passwordModal let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Confirmar</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body">            
+            <p>Por favor ingrese de nuevo sus credenciales por seguridad</p>          
+          </div>
+
+          <label for="mail">Usuario</label>
+          <input type="email" id="mail" name="user_email" [(ngModel)]="nickname">
+      
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="user_password" [(ngModel)]="contrasena">
+          
+          <div class="modal-footer">  
+            <button type="button" class="btn btn-outline-danger" (click)="modal.dismiss()">Cancelar</button>          
+            <button type="button" class="btn btn-outline-success" (click)="loginConfirmation()">Confirmar</button>
+          </div>          
+          </ng-template>
+
+            <!--MODAL CONFIRMATION-->       
+        <ng-template #confirmationModal let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Confirmar</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body">            
+            <p>¿Esta seguro de cambiar los valores que ingresó?</p>          
+          </div>
+          
+          <div class="modal-footer">  
+            <button type="button" class="btn btn-outline-danger" (click)="modal.dismiss()">No</button>          
+            <button type="button" class="btn btn-outline-success" (click)="openModal('password')">Si</button>
+          </div>          
+          </ng-template>
+ 
